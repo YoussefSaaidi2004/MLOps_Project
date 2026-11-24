@@ -31,6 +31,30 @@ def test_bandit_reports_no_medium_or_high_issue():
     assert result.returncode == 0, result.stdout + result.stderr
 
 
+# ------------------------------- flake8 ------------------------------------ #
+def _flake8(*args):
+    cmd = [sys.executable, "-m", "flake8", "--max-line-length", "100", *args, *FILES]
+    return subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)  # nosec B603
+
+
+def test_flake8_critical_errors():
+    """Erreurs bloquantes : syntaxe (E9), erreurs F63/F7, noms indéfinis (F82)."""
+    result = _flake8("--select=E9,F63,F7,F82", "--show-source")
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_flake8_no_unused_or_shadowed_code():
+    """Imports inutilisés (F401), variables inutilisées (F841), redéfinitions (F811)."""
+    result = _flake8("--select=F401,F841,F811")
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_flake8_full_report_is_clean():
+    """Rapport flake8 complet (style, longueur de ligne, complexité simple)."""
+    result = _flake8("--max-complexity=15")
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
 # ------------------------------- secrets ----------------------------------- #
 SECRET_PATTERN = re.compile(
     r"(password|passwd|secret|api[_-]?key|token)\s*=\s*[\"'][^\"']+[\"']", re.IGNORECASE

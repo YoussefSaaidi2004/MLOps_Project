@@ -1,0 +1,13 @@
+12:00:04.707 | INFO    | Flow run 'curly-mushroom' - Beginning flow run 'curly-mushroom' for flow 'train'
+12:00:04.716 | INFO    | Flow run 'curly-mushroom' - View at http://127.0.0.1:4200/runs/flow-run/2d9ccc71-9abb-457c-b49f-cc5b294f62cc
+Dataset (101766, 50) | train/test 81040/20726 | positifs train 0.2081 | scale_pos_weight 3.8049
+12:00:13.289 | INFO    | Task run 'Préparation des données-276' - Finished in state Completed()
+Entraînement xgboost (balanced=False) : 0.04 min
+Entraînement xgboost (balanced=True) : 0.04 min
+Entraînement lightgbm (balanced=False) : 0.02 min
+12:00:19.662 | INFO    | Task run 'Entraînement du modèle-af1' - Finished in state Completed()
+Modèle sauvegardé : resultats_xgboost_binaire/xgboost_sans_equilibrage.joblib
+Modèle sauvegardé : resultats_xgboost_binaire/xgboost_equilibre.joblib
+Modèle sauvegardé : resultats_xgboost_binaire/lightgbm_sans_equilibrage.joblib
+12:00:19.990 | INFO    | Task run 'Sauvegarder le modèle-201' - Finished in state Completed()
+12:00:20.804 | INFO    | Flow run 'curly-mushroom' - Finished in state Completed()

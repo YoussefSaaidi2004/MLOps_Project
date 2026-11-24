@@ -1,0 +1,8 @@
+2026-11-24 11:42:43 début du flow 'all'
+2026-11-24 11:42:47 flow 'all' ÉCHEC code 1 (/home/youssef/Downloads/resultats_xgboost_binaire/logs/pipeline_all_2026-11-24_114243.log)
+2026-11-24 11:42:58 début du flow 'train'
+2026-11-24 11:43:02 flow 'train' ÉCHEC code 1 (/home/youssef/Downloads/resultats_xgboost_binaire/logs/pipeline_train_2026-11-24_114258.log)
+2026-11-24 11:43:12 début du flow 'all'
+2026-11-24 11:43:12 flow 'all' ÉCHEC code 127 (/home/youssef/Downloads/resultats_xgboost_binaire/logs/pipeline_all_2026-11-24_114312.log)
+2026-11-24 12:00:01 début du flow 'train'
+2026-11-24 12:00:21 flow 'train' terminé avec succès (/home/youssef/Downloads/resultats_xgboost_binaire/logs/pipeline_train_2026-11-24_120001.log)

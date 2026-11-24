@@ -1,0 +1,84 @@
+Traceback (most recent call last):
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/client/orchestration/__init__.py", line 1523, in raise_for_api_version_mismatch
+    api_version = self.api_version()
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/client/orchestration/__init__.py", line 1479, in api_version
+    res = self._client.get("/admin/version")
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpx/_client.py", line 1053, in get
+    return self.request(
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/client/base.py", line 703, in send
+    response = self._send_with_retry(
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/client/base.py", line 587, in _send_with_retry
+    response = send(request, *send_args, **send_kwargs)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/pipeline_prefect.py", line 166, in <module>
+    FLOWS[args.flow]()
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/flows.py", line 1887, in __call__
+    return run_flow(
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/flow_engine.py", line 2268, in run_flow
+    ret_val = run_flow_sync(**kwargs)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/flow_engine.py", line 2108, in run_flow_sync
+    with engine.start():
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/flow_engine.py", line 1304, in start
+    with self.initialize_run():
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/flow_engine.py", line 1188, in initialize_run
+    with SyncClientContext.get_or_create() as client_ctx:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/context.py", line 341, in get_or_create
+    with cls() as ctx:
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/context.py", line 323, in __enter__
+    self.client.raise_for_api_version_mismatch_once()
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/client/orchestration/__init__.py", line 1514, in raise_for_api_version_mismatch_once
+    self.raise_for_api_version_mismatch()
+  File "/home/youssef/Downloads/resultats_xgboost_binaire/venv/lib/python3.10/site-packages/prefect/client/orchestration/__init__.py", line 1527, in raise_for_api_version_mismatch
+    raise RuntimeError(
+RuntimeError: Failed to reach API at http://127.0.0.1:4200/api/
