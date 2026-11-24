@@ -1,0 +1,26 @@
+{
+  "rows": 101766,
+  "columns": 50,
+  "train_rows": 81040,
+  "test_rows": 20726,
+  "train_unique_patients": 56954,
+  "test_unique_patients": 14564,
+  "positive_rate_test": 0.20664865386471098,
+  "scale_pos_weight": 3.8049330013043994,
+  "n_features": 42,
+  "params": {
+    "n_estimators": 350,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "min_child_weight": 5,
+    "subsample": 0.85,
+    "colsample_bytree": 0.85,
+    "reg_lambda": 3.0,
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "tree_method": "hist",
+    "enable_categorical": true,
+    "n_jobs": 2,
+    "random_state": 42
+  }
+}
